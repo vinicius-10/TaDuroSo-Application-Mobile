@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MerActivity">
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/mer_ly_main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/mer_ly_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:divider="@drawable/vertical_gap"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:showDividers="middle">
+
+                <TextView
+                    android:id="@+id/mer_tv_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/mer_ett_name"
+                    android:text="@string/mer_tv_name" />
+
+                <EditText
+                    android:id="@+id/mer_ett_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:ems="10"
+                    android:hint="@string/mer_ett_name"
+                    android:inputType="text" />
+
+                <TextView
+                    android:id="@+id/mer_tv_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/mer_ett_value"
+                    android:text="@string/mer_tv_value" />
+
+                <EditText
+                    android:id="@+id/mer_ett_value"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:digits="0123456789,"
+                    android:ems="10"
+                    android:hint="@string/money_symbol"
+                    android:inputType="number|numberDecimal" />
+
+                <TextView
+                    android:id="@+id/mer_tv_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/mer_ett_date"
+                    android:text="@string/mer_tv_date" />
+
+                <EditText
+                    android:id="@+id/mer_ett_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:ems="10"
+                    android:hint="@string/mer_ett_date"
+                    android:inputType="date" />
+
+                <TextView
+                    android:id="@+id/mer_tv_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/mer_rg_category"
+                    android:text="@string/mer_tv_type" />
+
+                <RadioGroup
+                    android:id="@+id/mer_rg_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/mer_rb_essential"
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:text="@string/mer_rb_essential"
+                        android:textAlignment="viewStart" />
+
+                    <RadioButton
+                        android:id="@+id/mer_rb_non_essential"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_weight="1"
+                        android:text="@string/mer_rb_non_essential" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/mer_tv_payment_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@id/mer_sp_payment_method"
+                    android:text="@string/mer_tv_payment_method" />
+
+                <Spinner
+                    android:id="@+id/mer_sp_payment_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:entries="@array/payment_method"
+                    android:spinnerMode="dialog" />
+
+                <CheckBox
+                    android:id="@+id/mer_cb_appellant"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mer_cb_appellant" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="mer_tv_name">Nome: </string>
+    <string name="mer_tv_value">Valor: </string>
+    <string name="money_symbol">R$</string>
+    <string name="mer_ett_name">Mercado, Farmácia, Lanchonete ...</string>
+    <string name="mer_tv_date">Data: </string>
+    <string name="mer_ett_date">dd/mm/aaaa</string>
+    <string name="mer_rb_essential">Essencial</string>
+    <string name="mer_rb_non_essential">Supérfluo</string>
+    <string name="mer_tv_payment_method">Forma de pagamento</string>
+    <string name="mer_tv_type">Tipo: </string>
+    <string name="mer_cb_appellant">Despesa fixa</string>
+    <string name="alert_clear_fields">Campos limpos</string>
+    <string name="alert_name_empty">O campo nome é obrigatório</string>
+    <string name="alert_empty_value">Campo valor é obrigatório</string>
+    <string name="alert_value_invalid">O valor informado está incorreto</string>
+    <string name="alert_date_empty">A data é obrigatória</string>
+    <string name="alert_date_invalid">Data inválida. Use o formato dd/mm/aaaa</string>
+    <string name="alert_category_empty">Selecione o tipo da despesa</string>
+    <string name="alert_type_invalid">Selecione um tipo de despesa válido</string>
+    <string name="payment_method_credit">Crédito</string>
+    <string name="payment_method_debit">Débito</string>
+    <string name="payment_method_cash">Dinheiro</string>
+    <string name="payment_method_pix">PIX</string>
+    <string name="alert_save_name">Nome: </string>
+    <string name="alert_save_value">Valor: R$</string>
+    <string name="alert_save_date">Data do gasto: </string>
+    <string name="alert_save_category">Categoria: </string>
+    <string name="alert_save_payment">Pagou com: </string>
+    <string name="cb_recurring">Gasto fixo</string>
+    <string name="alert_not_recurring">Gasto único</string>
+    <string name="mer_bt_clear">Limpar</string>
+    <string name="mer_bt_submit">Salvar</string>
+    <string name="ab_tv_about">Sobre</string>
+    <string name="ab_tv_student">Autor: <a href="https://www.linkedin.com/in/vinicius-dias-dev/">Vinicius Souza Dias</a></string>
+    <string name="ab_tv_course">Curso: Engenharia de Computação</string>
+    <string name="ab_tv_email">Email: vinicius.2023@alunos.utfpr.edu.br</string>
+    <string name="ab_tv_descripition">O Tá Duro Sô é uma ferramenta de gestão centralizada de gastos. Ele consolida suas finanças de forma simples e organizada.</string>
+    <string name="title_lisExpense">Lista de despesas</string>
+    <string name="title_mer">Cadastro de despesas</string>
+    <string name="le_btn_add">Adicionar</string>
+    <string name="alert_not_app_web">Nenhum aplicativo para abrir página web</string>
+    <string name="le_edit">Editar</string>
+    <string name="le_delet">Excluir</string>
+    <string name="mer_edit_expense">Editar despesa</string>
+    <string name="mer_mni_payment_register">Sugerir método de pagamento</string>
+    <string name="mer_mni_ordemList">Ordenação</string>
+    <string name="alert_warning">Aviso</string>
+    <string name="alert_confirmation">Confirmação</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="alert_expense_delet">Deseja excluir?\n</string>
+    <string name="alert_deleted">Excluído</string>
+</resources>

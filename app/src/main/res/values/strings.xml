@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name" translatable="false">Tá Duro sô</string>
+    <string name="mer_tv_name">Name: </string>
+    <string name="mer_tv_value">Amount: </string>
+    <string name="money_symbol">$</string>
+    <string name="mer_ett_name">Grocery store, Pharmacy, Snack bar ...</string>
+    <string name="mer_tv_date">Date: </string>
+    <string name="mer_ett_date">mm/dd/yyyy</string>
+    <string name="mer_rb_essential">Essential</string>
+    <string name="mer_rb_non_essential">Non-essential</string>
+    <string name="mer_tv_payment_method">Payment method</string>
+    <string name="mer_tv_type">Type: </string>
+    <string name="mer_cb_appellant">Fixed expense</string>
+    <string name="alert_clear_fields">Fields cleared</string>
+    <string name="alert_name_empty">The name field is required</string>
+    <string name="alert_empty_value">Amount field is required</string>
+    <string name="alert_value_invalid">The entered amount is invalid</string>
+    <string name="alert_date_empty">The date is required</string>
+    <string name="alert_date_invalid">Invalid date. Use the format mm/dd/yyyy</string>
+    <string name="alert_category_empty">Select the expense type</string>
+    <string name="alert_type_invalid">Select a valid expense type</string>
+    <string name="payment_method_credit">Credit card</string>
+    <string name="payment_method_debit">Debit card</string>
+    <string name="payment_method_cash">Cash</string>
+    <string name="payment_method_pix">PIX / Instant transfer</string>
+    <string name="alert_save_name">Name: </string>
+    <string name="alert_save_value">Amount: $</string>
+    <string name="alert_save_date">Expense date: </string>
+    <string name="alert_save_category">Category: </string>
+    <string name="alert_save_payment">Paid with: </string>
+    <string name="cb_recurring">Fixed expense</string>
+    <string name="alert_not_recurring">One-time expense</string>
+    <string name="mer_bt_clear">Clear</string>
+    <string name="mer_bt_submit">Save</string>
+    <string name="ab_tv_about">About</string>
+    <string name="ab_tv_student">Author: <a href="https://www.linkedin.com/in/vinicius-dias-dev/">Vinicius Souza Dias</a></string>
+    <string name="ab_tv_course">Major: Computer Engineering</string>
+    <string name="ab_tv_email">Email: vinicius.2023@alunos.utfpr.edu.br</string>
+    <string name="ab_tv_descripition">Tá Duro Sô is a centralized expense management tool. It consolidates your finances in a simple and organized way.</string>
+    <string name="title_lisExpense">Expense list</string>
+    <string name="title_mer">Register expense</string>
+    <string name="le_btn_add">Add</string>
+    <string name="alert_not_app_web">No web browser app available</string>
+    <string name="le_edit">Edit</string>
+    <string name="le_delet">Delete</string>
+    <string name="mer_edit_expense">Edit expense</string>
+    <string name="mer_mni_payment_register">Suggest payment method</string>
+    <string name="mer_mni_ordemList">Sorting</string>
+    <string name="alert_warning">Warning</string>
+    <string name="alert_confirmation">Confirmation</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="alert_expense_delet">Do you want do delete?\n</string>
+    <string name="alert_deleted">Deleted</string>
+    <string name="undo">Undo</string>
+    <string name="alert_saver_insert_error">Error tryng to insert</string>
+    <string name="alert_uptade_expense_error">Error trying to update</string>
+    <string name="alert_delet_expense_error">Error trying do delete</string>
+
+</resources>

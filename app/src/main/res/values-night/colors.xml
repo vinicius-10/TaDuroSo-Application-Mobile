@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary (Argila Claro) -->
+    <color name="md_theme_primary">#E7BEA7</color>
+    <color name="md_theme_onPrimary">#442612</color>
+    <color name="md_theme_primaryContainer">#5D3C26</color>
+    <color name="md_theme_onPrimaryContainer">#FFDBCB</color>
+    <color name="md_theme_primary_variant">#00FF80</color>
+
+    <color name="md_theme_backgroud_selected">#CD442612</color>
+</resources>

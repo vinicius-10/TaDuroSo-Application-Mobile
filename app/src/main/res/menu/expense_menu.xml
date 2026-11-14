@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mng_register"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/le_btn_add"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/mng_about"
+        android:title="@string/ab_tv_about" />
+
+    <item
+        android:id="@+id/mng_order_list"
+        android:icon="@drawable/ic_increasing_order"
+        android:title="@string/mer_mni_ordemList"
+        app:showAsAction="ifRoom" />
+</menu>

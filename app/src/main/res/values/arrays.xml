@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="payment_method">
+        <item>@string/payment_method_credit</item>
+        <item>@string/payment_method_debit</item>
+        <item>@string/payment_method_pix</item>
+        <item>@string/payment_method_cash</item>
+    </string-array>
+
+    <string-array name="expense_names">
+        <item>Supermercado</item>
+        <item>Aluguel</item>
+        <item>Gasolina</item>
+        <item>Restaurante</item>
+        <item>Farmácia</item>
+        <item>Internet</item>
+        <item>Academia</item>
+        <item>Uber</item>
+        <item>Serviço de Streaming</item>
+        <item>Manutenção do Carro</item>
+    </string-array>
+
+    <string-array name="expense_values">
+        <item>450.50</item>
+        <item>1200.00</item>
+        <item>200.00</item>
+        <item>85.90</item>
+        <item>64.30</item>
+        <item>119.90</item>
+        <item>90.00</item>
+        <item>24.50</item>
+        <item>39.90</item>
+        <item>350.00</item>
+    </string-array>
+
+    <string-array name="expense_dates">
+        <item>01/09/2026</item>
+        <item>05/09/2026</item>
+        <item>07/09/2026</item>
+        <item>10/09/2026</item>
+        <item>12/09/2026</item>
+        <item>13/09/2026</item>
+        <item>15/09/2026</item>
+        <item>16/09/2026</item>
+        <item>17/09/2026</item>
+        <item>18/09/2026</item>
+    </string-array>
+
+    <integer-array name="expense_appellants">
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+    </integer-array>
+
+    <integer-array name="expense_categories">
+        <item>0</item>
+        <item>0</item>
+        <item>0</item>
+        <item>1</item>
+        <item>1</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+
+    <integer-array name="expense_payment_methods">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+</resources>

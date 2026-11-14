@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary (Marrom Couro) -->
+    <color name="md_theme_primary">#77533C</color>
+    <color name="md_theme_onPrimary">#FFFFFF</color>
+    <color name="md_theme_primaryContainer">#FFDBCB</color>
+    <color name="md_theme_onPrimaryContainer">#2C1604</color>
+    <color name="md_theme_primary_variant">#000000</color>
+
+    <color name="md_theme_backgroud_selected">#D0A26E67</color>
+
+    <color name="ic_launcher_background">#FFFFFF</color>
+
+</resources>
