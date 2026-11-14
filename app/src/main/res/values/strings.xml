@@ -50,11 +50,11 @@
     <string name="alert_confirmation">Confirmation</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
-    <string name="alert_expense_delet">Do you want do delete?\n</string>
+    <string name="alert_expense_delet">Do you want to delete?\n</string>
     <string name="alert_deleted">Deleted</string>
     <string name="undo">Undo</string>
-    <string name="alert_saver_insert_error">Error tryng to insert</string>
+    <string name="alert_saver_insert_error">Error trying to insert</string>
     <string name="alert_uptade_expense_error">Error trying to update</string>
-    <string name="alert_delet_expense_error">Error trying do delete</string>
+    <string name="alert_delet_expense_error">Error trying to delete</string>
 
 </resources>

@@ -52,4 +52,8 @@
     <string name="no">Não</string>
     <string name="alert_expense_delet">Deseja excluir?\n</string>
     <string name="alert_deleted">Excluído</string>
+    <string name="undo">Desfazer</string>
+    <string name="alert_saver_insert_error">Erro ao inserir a despesa</string>
+    <string name="alert_uptade_expense_error">Erro ao atualizar a despesa</string>
+    <string name="alert_delet_expense_error">Erro ao excluir a despesa</string>
 </resources>
