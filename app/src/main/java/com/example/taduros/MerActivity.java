@@ -24,8 +24,8 @@ import com.example.taduros.utils.UtilsAlert;
 import com.example.taduros.utils.UtilsValue;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.text.ParseException;
-import java.util.Date;
+import java.time.format.DateTimeParseException;
+import java.time.LocalDate;
 
 
 public class MerActivity extends AppCompatActivity {
@@ -102,7 +102,7 @@ public class MerActivity extends AppCompatActivity {
 
                 String name = expense_origin.getName();
                 long value = expense_origin.getValue();
-                Date date = expense_origin.getDate();
+                LocalDate date = expense_origin.getDate();
                 Category_expense category = expense_origin.getCategory();
                 int payment_method = expense_origin.getPayment_method();
                 boolean applellant = expense_origin.isAppellant();
@@ -112,7 +112,7 @@ public class MerActivity extends AppCompatActivity {
                 String str_value, str_date;
 
                 str_value = UtilsValue.formatValue(value);
-                str_date =  UtilsDate.formatDate(date);
+                str_date =  UtilsDate.formatDate(this, date);
 
                 mer_ett_name.setText(name);
                 mer_ett_value.setText(str_value);
@@ -197,7 +197,7 @@ public class MerActivity extends AppCompatActivity {
                 str_date;
         int     goup_category,payment_method;
         long    value;
-        Date date;
+        LocalDate date;
         boolean applellant;
         Category_expense category;
 
@@ -239,8 +239,8 @@ public class MerActivity extends AppCompatActivity {
         }
 
         try {
-            date = UtilsDate.parseDate(str_date);
-        } catch (ParseException e) {
+            date = UtilsDate.parseDate(this, str_date);
+        } catch (DateTimeParseException e) {
              UtilsAlert.showAlert(this,
                     R.string.alert_date_invalid);
             mer_ett_date.requestFocus();

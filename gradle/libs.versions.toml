@@ -9,6 +9,7 @@ activityKtx = "1.13.0"
 constraintlayout = "2.2.2"
 ksp = "2.3.4"
 room = "3.0.3"
+desugarJdkLibs = "2.1.5"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -22,6 +23,7 @@ constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayo
 
 androidx-room-runtime = {module = "androidx.room3:room3-runtime", version.ref = "room"}
 androidx-room-compiler = {module = "androidx.room3:room3-compiler", version.ref = "room"}
+desugar-jdk-libs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
 
 
 [plugins]

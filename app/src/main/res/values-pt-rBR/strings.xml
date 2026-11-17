@@ -6,6 +6,7 @@
     <string name="mer_ett_name">Mercado, Farmácia, Lanchonete ...</string>
     <string name="mer_tv_date">Data: </string>
     <string name="mer_ett_date">dd/mm/aaaa</string>
+    <string name="date_pattern">dd/MM/uuuu</string>
     <string name="mer_rb_essential">Essencial</string>
     <string name="mer_rb_non_essential">Supérfluo</string>
     <string name="mer_tv_payment_method">Forma de pagamento</string>

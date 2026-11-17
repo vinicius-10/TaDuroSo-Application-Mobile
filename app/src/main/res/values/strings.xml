@@ -6,6 +6,7 @@
     <string name="mer_ett_name">Grocery store, Pharmacy, Snack bar ...</string>
     <string name="mer_tv_date">Date: </string>
     <string name="mer_ett_date">mm/dd/yyyy</string>
+    <string name="date_pattern">MM/dd/uuuu</string>
     <string name="mer_rb_essential">Essential</string>
     <string name="mer_rb_non_essential">Non-essential</string>
     <string name="mer_tv_payment_method">Payment method</string>

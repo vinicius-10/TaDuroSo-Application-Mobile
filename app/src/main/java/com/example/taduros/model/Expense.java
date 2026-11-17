@@ -4,11 +4,10 @@ import androidx.annotation.NonNull;
 import androidx.room3.Entity;
 import androidx.room3.PrimaryKey;
 
-import com.example.taduros.utils.UtilsDate;
 import com.example.taduros.utils.UtilsValue;
 
 import java.util.Comparator;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Objects;
 
 
@@ -21,7 +20,7 @@ public class Expense {
 
 
     @NonNull
-    private Date date;
+    private LocalDate date;
 
     @NonNull
     private String name;
@@ -33,7 +32,7 @@ public class Expense {
 
 
 
-    public Expense(boolean appellant, @NonNull Date date, @NonNull String name, long value, @NonNull Category_expense category, int payment_method) {
+    public Expense(boolean appellant, @NonNull LocalDate date, @NonNull String name, long value, @NonNull Category_expense category, int payment_method) {
         this.appellant = appellant;
         this.date = date;
         this.name = name;
@@ -59,11 +58,11 @@ public class Expense {
     }
 
     @NonNull
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(@NonNull Date date) {
+    public void setDate(@NonNull LocalDate date) {
         this.date = date;
     }
 
@@ -106,7 +105,7 @@ public class Expense {
     public String toString() {
         return  name  + '\n' +
                 UtilsValue.formatValue(value) + '\n' +
-                UtilsDate.formatDate(date) + '\n' +
+                date + '\n' +
                 category;
 
     }
@@ -117,7 +116,7 @@ public class Expense {
 
             if(expense1.getDate().equals(expense2.getDate())) {
                 return 0;
-            }else if (expense1.getDate().before(expense2.getDate())) {
+            }else if (expense1.getDate().isBefore(expense2.getDate())) {
                 return -1;
             }else {
                 return  1;
@@ -131,7 +130,7 @@ public class Expense {
 
             if(expense1.getDate().equals(expense2.getDate())) {
                 return 0;
-            }else if (expense1.getDate().before(expense2.getDate())) {
+            }else if (expense1.getDate().isBefore(expense2.getDate())) {
                 return 1;
             }else {
                 return  -1;
