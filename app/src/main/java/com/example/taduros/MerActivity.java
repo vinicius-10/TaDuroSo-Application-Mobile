@@ -21,6 +21,7 @@ import com.example.taduros.model.Expense;
 import com.example.taduros.persistence.ExpenseDatabase;
 import com.example.taduros.utils.UtilsDate;
 import com.example.taduros.utils.UtilsAlert;
+import com.example.taduros.utils.UtilsValue;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.text.ParseException;
@@ -79,7 +80,7 @@ public class MerActivity extends AppCompatActivity {
 
         Bundle bundle = intent_open.getExtras();
 
-        readPreference();
+        // readPreference(); // chamada duplicada: as preferências já são lidas acima
         if(bundle != null){
             mod = bundle.getInt(KEY_MOD);
 
@@ -100,7 +101,7 @@ public class MerActivity extends AppCompatActivity {
                 expense_origin =database.getExpenseDao().queryForId(id);
 
                 String name = expense_origin.getName();
-                float value = expense_origin.getValue();
+                long value = expense_origin.getValue();
                 Date date = expense_origin.getDate();
                 Category_expense category = expense_origin.getCategory();
                 int payment_method = expense_origin.getPayment_method();
@@ -110,7 +111,7 @@ public class MerActivity extends AppCompatActivity {
 
                 String str_value, str_date;
 
-                str_value = String.valueOf(value);
+                str_value = UtilsValue.formatValue(value);
                 str_date =  UtilsDate.formatDate(date);
 
                 mer_ett_name.setText(name);
@@ -195,7 +196,7 @@ public class MerActivity extends AppCompatActivity {
                 str_value,
                 str_date;
         int     goup_category,payment_method;
-        float   value;
+        long    value;
         Date date;
         boolean applellant;
         Category_expense category;
@@ -220,7 +221,7 @@ public class MerActivity extends AppCompatActivity {
         }
 
         try {
-            value = Float.parseFloat(str_value.replace(",","."));
+            value = UtilsValue.parseValue(str_value);
         }catch (NumberFormatException e){
              UtilsAlert.showAlert(this,
                     R.string.alert_value_invalid);

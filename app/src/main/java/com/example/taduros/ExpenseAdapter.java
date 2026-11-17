@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.taduros.model.Expense;
 import com.example.taduros.utils.UtilsDate;
+import com.example.taduros.utils.UtilsValue;
 
 import java.util.List;
 
@@ -41,7 +42,7 @@ public class ExpenseAdapter  extends BaseAdapter {
 
     @Override
     public long getItemId(int position) {
-        return 0;
+        return ls_expense.get(position).getId();
     }
 
 
@@ -72,7 +73,7 @@ public class ExpenseAdapter  extends BaseAdapter {
 
         holder.lle_tv_field_name.setText(expense.getName());
 
-        String str_value = Float.toString(expense.getValue());
+        String str_value = UtilsValue.formatValue(expense.getValue());
 
         holder.lle_tv_field_value.setText( str_value);
 

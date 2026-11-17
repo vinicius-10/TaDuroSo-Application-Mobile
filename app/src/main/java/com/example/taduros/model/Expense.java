@@ -5,6 +5,7 @@ import androidx.room3.Entity;
 import androidx.room3.PrimaryKey;
 
 import com.example.taduros.utils.UtilsDate;
+import com.example.taduros.utils.UtilsValue;
 
 import java.util.Comparator;
 import java.util.Date;
@@ -25,15 +26,14 @@ public class Expense {
     @NonNull
     private String name;
 
-    @NonNull
-    private Float value;
+    private long value; // em centavos (R$ 12,50 = 1250)
     @NonNull
     private Category_expense category;
     private int payment_method;
 
 
 
-    public Expense(boolean appellant, @NonNull Date date, @NonNull String name, @NonNull Float value, @NonNull Category_expense category, int payment_method) {
+    public Expense(boolean appellant, @NonNull Date date, @NonNull String name, long value, @NonNull Category_expense category, int payment_method) {
         this.appellant = appellant;
         this.date = date;
         this.name = name;
@@ -76,13 +76,11 @@ public class Expense {
         this.name = name;
     }
 
-    @NonNull
-    public Float getValue() {
+    public long getValue() {
         return value;
     }
 
-    @NonNull
-    public void setValue( @NonNull Float value) {
+    public void setValue(long value) {
         this.value = value;
     }
 
@@ -107,7 +105,7 @@ public class Expense {
     @Override
     public String toString() {
         return  name  + '\n' +
-                value + '\n' +
+                UtilsValue.formatValue(value) + '\n' +
                 UtilsDate.formatDate(date) + '\n' +
                 category;
 
@@ -149,7 +147,7 @@ public class Expense {
                 payment_method == expense.payment_method &&
                 date.equals(expense.date) &&
                 name.equals(expense.name) &&
-                value.equals(expense.value) &&
+                value == expense.value &&
                 category == expense.category;
     }
 

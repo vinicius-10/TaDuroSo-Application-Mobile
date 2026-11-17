@@ -28,6 +28,7 @@ import com.example.taduros.model.Expense;
 import com.example.taduros.persistence.ExpenseDatabase;
 import com.example.taduros.utils.UtilsDate;
 import com.example.taduros.utils.UtilsAlert;
+import com.example.taduros.utils.UtilsValue;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -123,7 +124,7 @@ public class ListExpense extends AppCompatActivity {
                 Expense expense = (Expense) le_listView.getItemAtPosition(position);
                 Toast.makeText(getApplicationContext(),
                                 getString(R.string.alert_save_name) + expense.getName() + "\n" +
-                                getString(R.string.alert_save_value) + expense.getValue() + "\n" +
+                                getString(R.string.alert_save_value) + UtilsValue.formatValue(expense.getValue()) + "\n" +
                                 getString(R.string.alert_save_date) + UtilsDate.formatDate(expense.getDate()),
                             Toast.LENGTH_LONG).show();
             }
@@ -249,7 +250,7 @@ public class ListExpense extends AppCompatActivity {
 
         final Expense expense = ls_expense.get(selected_expense);
 
-        String menssage = getString(R.string.alert_expense_delet) + getString(R.string.mer_tv_name) + expense.getName() + getString(R.string.mer_tv_date) + UtilsDate.formatDate(expense.getDate());
+        String menssage = getString(R.string.alert_expense_delet) + getString(R.string.mer_tv_name) + expense.getName() + "\n" + getString(R.string.mer_tv_date) + UtilsDate.formatDate(expense.getDate());
 
         DialogInterface.OnClickListener listenerYes = new DialogInterface.OnClickListener() {
             @Override
