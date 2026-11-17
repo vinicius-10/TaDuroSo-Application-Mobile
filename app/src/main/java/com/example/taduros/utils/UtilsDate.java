@@ -9,21 +9,10 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
 
-/*
- * LocalDate (java.time) representa só uma data do calendário (dia, mês e ano),
- * sem hora e sem fuso horário. Assim a data digitada pelo usuário não muda
- * quando o fuso do aparelho muda, o que acontecia com java.util.Date
- * (que guarda um instante no tempo, em milissegundos).
- *
- * O java.time só existe nativamente a partir da API 26. Como o minSdk é 24,
- * ele é liberado pelo "core library desugaring" configurado no build.gradle.
- */
 public class UtilsDate {
 
-    // Retorna o formatador usando o padrão do idioma do app (res/values*/strings.xml)
+    // Retorna o formatador configurado para o idioma do app
     private static DateTimeFormatter getFormatter(Context context) {
-        // STRICT: exige o texto inteiro e rejeita datas inexistentes (ex: 31/02).
-        // No modo STRICT o ano deve usar "uuuu" no padrão, pois "yyyy" exige a era.
         return DateTimeFormatter.ofPattern(context.getString(R.string.date_pattern))
                 .withResolverStyle(ResolverStyle.STRICT);
     }
