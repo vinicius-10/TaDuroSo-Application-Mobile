@@ -1,6 +1,8 @@
 package com.example.taduros.utils;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 public final class UtilsValue {
 
@@ -25,9 +27,17 @@ public final class UtilsValue {
     }
 
     /**
-     * Converte de centavos (ex: 1250) para texto de exibição (ex: "12.50")
+     * Converte de centavos (ex: 1250) para texto de exibição no idioma do aparelho
+     * (ex: "12,50" em português, "12.50" em inglês)
      */
     public static String formatValue(long value) {
-        return BigDecimal.valueOf(value, 2).toPlainString();
+        // NumberFormat usa o separador decimal do Locale (vírgula ou ponto)
+        NumberFormat nf = NumberFormat.getNumberInstance(Locale.getDefault());
+        nf.setMinimumFractionDigits(2);
+        nf.setMaximumFractionDigits(2);
+        // Sem separador de milhar, para o texto voltar ao campo de edição
+        // e ser lido de novo pelo parseValue sem erro
+        nf.setGroupingUsed(false);
+        return nf.format(BigDecimal.valueOf(value, 2));
     }
 }
