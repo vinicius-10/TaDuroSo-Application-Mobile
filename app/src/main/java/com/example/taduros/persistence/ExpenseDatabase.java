@@ -11,7 +11,7 @@ import com.example.taduros.model.Expense;
 
 
 
-@Database(entities = {Expense.class}, version =  1, exportSchema = false)
+@Database(entities = {Expense.class}, version =  2, exportSchema = false)
 @ColumnTypeConverters(Converters.class)
 public abstract class ExpenseDatabase extends RoomDatabase {
 
@@ -25,10 +25,18 @@ public abstract class ExpenseDatabase extends RoomDatabase {
         if(INSTANCE == null){
             synchronized (ExpenseDatabase.class){
                 if(INSTANCE == null){
-                    INSTANCE = Room.databaseBuilder(context,
+                    /*INSTANCE = Room.databaseBuilder(context,
                                                     ExpenseDatabase.class,
                                                     "expense.db"
-                    ).allowMainThreadQueries().build();
+                    ).allowMainThreadQueries().build();*/
+
+                    Builder<ExpenseDatabase> builder = Room.databaseBuilder(context, ExpenseDatabase.class, "expense.db");
+
+                    builder.allowMainThreadQueries();
+
+                    builder.addMigrations(new Migrar_1_2());
+
+                    INSTANCE = builder.build();
                 }
             }
         }
