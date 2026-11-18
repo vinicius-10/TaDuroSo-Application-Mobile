@@ -77,7 +77,7 @@ public class ExpenseAdapter  extends BaseAdapter {
 
         holder.lle_tv_field_value.setText( str_value);
 
-        holder.lle_tv_field_date.setText(UtilsDate.formatDate(context, expense.getDate()));
+        holder.lle_tv_field_date.setText(UtilsDate.formatDate(expense.getDate()));
 
         switch (expense.getCategory()){
             case essential:

@@ -1,5 +1,6 @@
 package com.example.taduros;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -24,7 +26,6 @@ import com.example.taduros.utils.UtilsAlert;
 import com.example.taduros.utils.UtilsValue;
 import com.google.android.material.snackbar.Snackbar;
 
-import java.time.format.DateTimeParseException;
 import java.time.LocalDate;
 
 
@@ -56,6 +57,8 @@ public class MerActivity extends AppCompatActivity {
 
     private Expense expense_origin;
 
+    private LocalDate expense_date;
+
 
 
     @Override
@@ -72,6 +75,15 @@ public class MerActivity extends AppCompatActivity {
         mer_sp_payment_method   =   findViewById(R.id.mer_sp_payment_method);
         mer_rb_essential        =   findViewById(R.id.mer_rb_essential);
         mer_rb_non_essential    =   findViewById(R.id.mer_rb_non_essential);
+
+
+        mer_ett_date.setFocusable(false);
+        mer_ett_date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                displayDatePickerDialog();
+            }
+        });
 
 
         readPreference();
@@ -91,6 +103,9 @@ public class MerActivity extends AppCompatActivity {
                     mer_sp_payment_method.setSelection(payment_value);
                 }
 
+                expense_date = LocalDate.now();
+
+
             }else{
                 setTitle(getString(R.string.mer_edit_expense));
 
@@ -102,21 +117,20 @@ public class MerActivity extends AppCompatActivity {
 
                 String name = expense_origin.getName();
                 long value = expense_origin.getValue();
-                LocalDate date = expense_origin.getDate();
+                expense_date = expense_origin.getDate();
                 Category_expense category = expense_origin.getCategory();
                 int payment_method = expense_origin.getPayment_method();
                 boolean applellant = expense_origin.isAppellant();
 
 
 
-                String str_value, str_date;
+                String str_value;
 
                 str_value = UtilsValue.formatValue(value);
-                str_date =  UtilsDate.formatDate(this, date);
+
 
                 mer_ett_name.setText(name);
                 mer_ett_value.setText(str_value);
-                mer_ett_date.setText(str_date);
 
                 mer_sp_payment_method.setSelection(payment_method);
 
@@ -131,9 +145,27 @@ public class MerActivity extends AppCompatActivity {
                 mer_ett_name.requestFocus();
                 mer_ett_name.setSelection(mer_ett_name.getText().length());
             }
+            mer_ett_date.setText(UtilsDate.formatDate(expense_date));
         }
 
 
+    }
+
+    private void displayDatePickerDialog(){
+        DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                expense_date = LocalDate.of(year,month +1,dayOfMonth);
+
+                mer_ett_date.setText(UtilsDate.formatDate(expense_date));
+            }
+        };
+
+
+
+        DatePickerDialog picker = new DatePickerDialog(this,listener, expense_date.getYear(),expense_date.getMonthValue()-1,expense_date.getDayOfMonth());
+
+        picker.show();
     }
 
     public void clearFields(){
@@ -197,7 +229,6 @@ public class MerActivity extends AppCompatActivity {
                 str_date;
         int     goup_category,payment_method;
         long    value;
-        LocalDate date;
         boolean applellant;
         Category_expense category;
 
@@ -238,15 +269,6 @@ public class MerActivity extends AppCompatActivity {
             return;
         }
 
-        try {
-            date = UtilsDate.parseDate(this, str_date);
-        } catch (DateTimeParseException e) {
-             UtilsAlert.showAlert(this,
-                    R.string.alert_date_invalid);
-            mer_ett_date.requestFocus();
-            return;
-        }
-
         //validar o raio buton
         goup_category = mer_rg_category.getCheckedRadioButtonId();
 
@@ -272,7 +294,7 @@ public class MerActivity extends AppCompatActivity {
         //recuperar o checbox
         applellant = mer_cb_appellant.isChecked();
 
-        Expense expense =  new Expense(applellant, date, name, value, category, payment_method);
+        Expense expense =  new Expense(applellant, expense_date, name, value, category, payment_method);
 
         if (expense.equals(expense_origin)){
             setResult(MerActivity.RESULT_CANCELED);
