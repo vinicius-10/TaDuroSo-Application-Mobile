@@ -17,18 +17,12 @@ public class UtilsDate {
                 .withResolverStyle(ResolverStyle.STRICT);
     }
 
-    /**
-     * Converte de LocalDate (sistema) para String (exibição do usuário)
-     */
+
     public static String formatDate(Context context, LocalDate date) {
         if (date == null) return "";
         return date.format(getFormatter(context));
     }
 
-    /**
-     * Converte de String (digitado pelo usuário) para LocalDate (sistema)
-     * Lança DateTimeParseException se o texto estiver fora do formato do idioma do app
-     */
     public static LocalDate parseDate(Context context, String dateStr) throws DateTimeParseException {
         if (dateStr == null || dateStr.trim().isEmpty()) return null;
         return LocalDate.parse(dateStr.trim(), getFormatter(context));
